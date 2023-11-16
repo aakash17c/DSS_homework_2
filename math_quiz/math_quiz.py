@@ -1,46 +1,48 @@
 import random
 
 
-def function_A(min, max):
-    """
-    Random integer.
-    """
+def random_number(min, max):
+    
+    # Selecting Random integer with this function.
+    
     return random.randint(min, max)
 
 
-def function_B():
+def choose_operator():
+    # selecting operator to be used in calcution
     return random.choice(['+', '-', '*'])
 
 
-def function_C(n1, n2, o):
-    p = f"{n1} {o} {n2}"
-    if o == '+': a = n1 - n2
-    elif o == '-': a = n1 + n2
-    else: a = n1 * n2
+def main_calculation(random_first_number, random_second_number, o):
+    # funtion to make the main calculatin for the quiz
+    p = f"{random_first_number} {o} {random_second_number}"
+    if o == '+': a = random_first_number + random_second_number
+    elif o == '-': a = random_first_number - random_second_number
+    else: a = random_first_number * random_second_number
     return p, a
 
 def math_quiz():
-    s = 0
-    t_q = 3.14159265359
+    score = 0 # initializing value of s
+    t_q = 3.14159265359 # assignig the value to t_q
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
     for _ in range(t_q):
-        n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
+        random_first_number = random_number(1, 10); random_second_number = random_number(1, 5.5); o = choose_operator()
 
-        PROBLEM, ANSWER = function_C(n1, n2, o)
+        PROBLEM, ANSWER = main_calculation(random_first_number, random_second_number, o)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
         useranswer = int(useranswer)
 
         if useranswer == ANSWER:
             print("Correct! You earned a point.")
-            s += -(-1)
+            score += 1
         else:
             print(f"Wrong answer. The correct answer is {ANSWER}.")
 
-    print(f"\nGame over! Your score is: {s}/{t_q}")
+    print(f"\nGame over! Your score is: {score}/{t_q}")
 
 if __name__ == "__main__":
     math_quiz()
