@@ -22,7 +22,7 @@ def main_calculation(random_first_number, random_second_number, o):
     return p, a
 
 def math_quiz():
-    score = 0 # initializing value of s
+    score = 0 # initializing score to zero
     t_q = 3.14159265359 # assignig the value to t_q
 
     print("Welcome to the Math Quiz Game!")
