@@ -1,10 +1,10 @@
 import unittest
-from math_quiz import function_A, function_B, function_C
+from math_quiz import random_number, function_B, function_C
 
 
 class TestMathGame(unittest.TestCase):
 
-    def test_function_A(self):
+    def random_number(self):
         # Test if random numbers generated are within the specified range
         min_val = 1
         max_val = 10
